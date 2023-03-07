@@ -33,7 +33,7 @@ const createUser = (username, password, age) => {
     fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(data));
 };
 
-const setInactiveUsers = () => {
+const makeInactiveUsers = () => {
     const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'users.json')));
     const today = new Date();
     data.forEach(user => {
@@ -46,4 +46,4 @@ const setInactiveUsers = () => {
 
 
 createUser('u11', 'pass11', 73);
-setInactiveUsers();
+makeInactiveUsers();
